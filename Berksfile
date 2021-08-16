@@ -10,4 +10,4 @@ cookbook 'hops', github: "logicalclocks/hops-hadoop-chef", branch: "master"
 
 cookbook 'sysctl', '~> 1.0.3'
 cookbook 'kernel_module', '~> 1.1.1'
-
+cookbook 'yum', '= 6.1.1'
