@@ -252,25 +252,6 @@ if node['kube-hops']['master']['untaint'].eql?("true")
   end
 end
 
-# Push nvidia device plugin image to registry for airgapped installations
-if node['kube-hops']['device'].eql?("nvidia")
-  nvidia_device_plugin_image = "#{Chef::Config['file_cache_path']}/nvidia_device_plugin#{node['kube-hops']['k8s_device_plugin']['tar']}"
-  remote_file nvidia_device_plugin_image do
-    source node['kube-hops']['k8s_device_plugin']['img_tar_url']
-    owner node['kube-hops']['user']
-    group node['kube-hops']['group']
-    mode "0644"
-  end
-
-  bash "load" do
-    user 'root'
-    group 'root'
-    code <<-EOH
-      docker load < #{nvidia_device_plugin_image}
-    EOH
-  end
-end
-
 # Install daemonset for scheduling and discovering NVIDIA GPUs
 # https://github.com/NVIDIA/k8s-device-plugin
 if node['kube-hops']['device'].eql?("nvidia")
