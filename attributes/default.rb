@@ -80,7 +80,7 @@ default['kube-hops']['docker_img_reg_url']                 = ""
 default['kube-hops']['nvidia']['base_dir']                 = node['kube-hops']['dir'] + "/nvidia"
 default['kube-hops']['k8s_device_plugin']['tag']           = "v0.7.0"
 default['kube-hops']['k8s_device_plugin']['tar']           = "k8s-device-plugin-#{node['kube-hops']['k8s_device_plugin']['tag']}.tar"
-default['kube-hops']['k8s_device_plugin']['img_tar_url']   = node['download_url'] + "#{node['kube-hops']['nvidia']['base_dir']}/#{node['kube-hops']['k8s_device_plugin']['tar']}"
+default['kube-hops']['k8s_device_plugin']['img_tar_url']   = node['download_url'] + "/#{node['kube-hops']['nvidia']['base_dir']}/#{node['kube-hops']['k8s_device_plugin']['tar']}"
 
 #
 # KF Serving
