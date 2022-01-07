@@ -83,7 +83,7 @@ if node['kube-hops']['device'].eql?("nvidia")
     user 'root'
     group 'root'
     code <<-EOH
-      docker load < #{nvidia_device_plugin_image}
+      docker load -i #{nvidia_device_plugin_image}
     EOH
   end
 end
