@@ -169,6 +169,18 @@ attribute "kube-hops/pull_policy",
           :description =>  "Image pull policy for new containers",
           :type => 'string'
 
+attribute "kube-hops/docker_default_memory_allocation",
+          :description =>  "Default memory that can be allocated for Docker containers",
+          :type => 'string'
+
+attribute "kube-hops/docker_default_cores_allocation",
+          :description =>  "Default number of cores that can be allocated for Docker containers",
+          :type => 'string'
+
+attribute "kube-hops/docker_default_gpus_allocation",
+          :description =>  "Default number of GPUs that can be allocated for Docker containers",
+          :type => 'string'
+
 attribute "kube-hops/docker_max_memory_allocation",
           :description =>  "Maximum memory that can be allocated for Docker containers",
           :type => 'string'

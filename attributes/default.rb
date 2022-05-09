@@ -24,9 +24,15 @@ default['kube-hops']['bin']['download_url']               = "#{node['download_ur
 
 
 # Resource allocation configuration
+# Default configuration
+default['kube-hops']['docker_default_memory_allocation']      = "2048"
+default['kube-hops']['docker_default_cores_allocation']       = "1"
+default['kube-hops']['docker_cores_fraction']                 = "1.0"
+default['kube-hops']['docker_default_gpus_allocation']        = "0"
+
+# Limits
 default['kube-hops']['docker_max_memory_allocation']      = "8192"
 default['kube-hops']['docker_max_cores_allocation']       = "4"
-default['kube-hops']['docker_cores_fraction']             = "1.0"
 default['kube-hops']['docker_max_gpus_allocation']        = "0"
 
 # Network configuration
